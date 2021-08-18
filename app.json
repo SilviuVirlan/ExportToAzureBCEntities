@@ -1,0 +1,26 @@
+{
+  "id": "07cb07a8-6dce-4206-a9d5-0add0a1e2672",
+  "name": "VendorExportToAzure",
+  "publisher": "Silviu Virlan",
+  "version": "1.0.0.5",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50250,
+      "to": 50259
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://VendorExportToAzure.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

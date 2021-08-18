@@ -67,8 +67,6 @@ page 50251 "Vendor Export Logs"
                     content: HttpContent;
                     headers: HttpHeaders;
                     len: Integer;
-
-
                     _inSt: InStream;
                     _fileName: Text;
                     _fullURL: Text;
@@ -98,14 +96,12 @@ page 50251 "Vendor Export Logs"
 
                     client.SetBaseAddress(_azureStorageSetup."Account URL");
 
-                    // Load the memory stream and get the size
                     memoryStream.Create(0);
                     memoryStream.ReadFrom(_inSt);
                     len := memoryStream.Length();
                     memoryStream.SetPosition(0);
                     memoryStream.GetInStream(_inSt);
 
-                    // Write the Stream into HTTP Content and change the needed Header Information 
                     content.WriteFrom(_inSt);
                     content.GetHeaders(headers);
                     headers.Remove('Content-Type');
@@ -113,7 +109,6 @@ page 50251 "Vendor Export Logs"
                     headers.Add('Content-Length', StrSubstNo('%1', len));
                     headers.Add('x-ms-blob-type', 'BlockBlob');
 
-                    //PUT https://<accountname>.blob.core.windows.net/<container>/<blob>?<sastoken>
                     _fullURL := StrSubstNo('%1/%2/%3?%4', _azureStorageSetup."Account URL",
                                                           _azureStorageSetup.Container,
                                                           _fileName,
@@ -131,6 +126,5 @@ page 50251 "Vendor Export Logs"
                 end;
             }
         }
-
     }
 }
